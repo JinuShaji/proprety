@@ -1,0 +1,33 @@
+
+<div class="container" style="margin-top: 50px;">
+ 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+       {{!-- <th scope="col">Pid</th> --}}
+      <th scope="col">Discription</th>
+      <th scope="col">Place</th>
+      <th scope="col">Price</th>
+      <th scope="col">image</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each result}}
+    <tr>
+      <th scope="row">{{this.Product_name}}</th>
+      {{!-- <td>{{this.Product_id}}</td> --}}
+      <td>{{this.Description}}</td>
+      <td>{{this.place}}</td>
+      <td>{{this.Price}}</td>
+      <td> <img style="height: 50px; width:50px" src="/images/product/{{this.Image}}" alt=""> </td>
+    
+    </tr>
+   {{/each}}
+   
+  </tbody>
+</table>
+ <div class="row">
+   <a href="/addProduct" class="btn btn-success ">Add Product</a>
+  </div>
+</div>

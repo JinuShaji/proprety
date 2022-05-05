@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-lg navbar-light $gray-400: #ced4da;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/users/" style="color: black;"  style="margin-left: 100px;" >PropertySale </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      <div  class="row g-3 align-items-center">
+  <div class="col-auto">
+     </div>
+
+      <div class="col-auto" style="margin-left: 200px;" >
+    <input  type="text" style="width: 500px;" id="inputPassword6" placeholder="Search for properties and more"  class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+  
+  
+  <div class="col-auto">
+    <span id="passwordHelpInline" class="form-text">
+       
+    </span>
+   
+    <div class="dropdown">
+      {{#if user}}
+  <button class="dropbtn" style="color: white;">{{user.user_name}}</button>
+  <div class="dropdown-content">
+  <a href="/users/update/{{user.email}}">Account settings</a>
+  <a href="/users/logout">Logout</a>
+
+    {{else}}
+        <button   style="margin-left: 30px;" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          more
+  {{/if}}
+        
+  </div>
+  </div>
+</div>
+    
+    </div>
+    <div style="margin-left: 60px;">
+      
+    </div>
+  </div>
+  
+
+</nav>
+
+
+{{!-- <div class="card mb-3 cartbox" style="max-width: 540px;height:400px">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">PRICE DETAILS</h5>
+        
+        <div class="row g-3">
+  <div class="col">
+   Price (1 item)
+  </div>
+  <div class="col">
+   1998 /-
+  </div>
+</div>
+<div class="row g-3">
+  <div class="col">
+Discount  </div>
+  <div class="col">
+   − ₹1,910
+
+  </div>
+</div>
+<div class="row g-3">
+  <div class="col">
+Delivery Charges
+  </div>
+  <div class="col">
+FREE
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col">
+Total Amount
+  </div>
+  <div class="col">
+₹90,990
+
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+
+<div class="container" >
+  
+    <div class="card mb-3" style="max-width:50%;">
+  <div class="row g-0  ">
+    
+      {{#each product}}
+      
+    <div class="col-md-4 cart"  style="margin-top: 10px;">
+      <img src="/images/product/{{this.Image}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8 cart"  style="margin-top: 10px;">
+      <div class="card-body">
+        <h5 class="card-title">{{this.Product_name}}</h5>
+        <p class="card-text">{{this.Description}}</p>
+        <h5 class="card-title">{{this.Price}}</h5>
+        <p class="card-text">Total Number of {{this.Product_name}} </p>
+        <p class="card-text">{{this.qnty}}</p>
+    </div>
+    </div>
+    {{/each}}
+  
+</div>
+</div>
+
+
+

@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-lg navbar-light $gray-400: #ced4da;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/users/" style="color: black;"  style="margin-left: 100px;" >PropertySale </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      <div  class="row g-3 align-items-center">
+  <div class="col-auto">
+     </div>
+
+      <div class="col-auto" style="margin-left: 200px;" >
+    <input  type="text" style="width: 400px;" id="inputPassword6" placeholder="Search for properties and more"  class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+ 
+  
+  <div class="col-auto">
+    
+      {{!-- <div class="btn-group"></div>
+    <button   style="margin-left: 30px;" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      {{user.user_name}}
+        </button>  --}}
+      
+    <div class="dropdown">
+      {{#if user}}
+  <button class="dropbtn" style="color: white;">{{user.user_name}}</button>
+  <div class="dropdown-content">
+  <a href="/users/update/{{user.email}}">Account settings</a>
+  <a href="/users/logout">Logout</a>
+
+    {{else}}
+        <button   style="margin-left: 30px;" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          more
+        </button>
+        <span id="passwordHelpInline" class="form-text">
+       <a href="/users/userLogin" style="margin-left: 30px; width: 150px;" class="btn btn-light" >Login</a>
+    </span>
+  {{/if}}      
+  </div>
+  </div>
+</div>
+    </div>
+
+    <div style="margin-left: 60px;">
+       {{#if user}}
+        <button type="button" class="btn btn-light position-relative">      <i class="fa fa-heart-o" style="font-size:20px;color:rgb(19, 39, 212)"> </i>
+            <a class="nav-link" href="/users/cart/{{user.email}}" style="color: black;">Favorite</a>             
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{CartTotal}}
+              </span>
+              </span>
+              </button>
+              <button  type="button" class="btn btn-light position-relative">      <i class="fa fa-credit-card-alt" style="font-size:15px;color:red"></i>
+            <a class="nav-link" href="/users/myorder/{{user.email}}" style="color: black;">MyOrder</a>             
+              </button>
+              <button  type="button" class="btn btn-light position-relative">      
+            <a class="nav-link" href="/users/addpost/{{user.email}}" style="color: black;">AddPost</a>             
+              </button>
+        {{/if}}
+         <button  type="button" class="btn btn-light position-relative">      
+            <a class="nav-link" href="/users/feed" style="color: black;">Feeds</a>             
+              </button>
+    </div>
+  </div>
+  
+
+</nav>
